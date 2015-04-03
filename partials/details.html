@@ -1,0 +1,13 @@
+<section class="chefinfo">
+  <div class="chef cf" ng-model="chefs">
+    <a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+    <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
+    <h1>{{chefs[whichItem].name}}</h1>
+    <div class="info">
+      <h3>{{chefs[whichItem].restaurant}}</h3>
+      <img ng-src="images/{{chefs[whichItem].shortname}}_chef.jpg" alt="Photo of {{chefs[whichItem].name}}">
+      <div class="bio">{{chefs[whichItem].bio}}</div>
+    </div>
+  </div>
+  <a href="index.html">&laquo; Back to search</a>
+</section>

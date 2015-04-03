@@ -1,0 +1,37 @@
+<section class="chefpage">
+
+  <div class="search">
+    <h1>Portland Tasting Kitchen</h1>
+    <label>search: </label>
+    <input ng-model="query" placeholder="Search for chefs, recipes, or ingredients..." autofocus>
+
+    <label class="formgroup">by:
+      <select ng-model="chefOrder">
+        <option value="name">Name</option>
+        <option value="restaurant">Restaurant</option>
+      </select>
+    </label>
+
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" checked>
+      ascending
+     </label>
+
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" value="reverse">
+      descending
+    </label>
+  </div>
+
+  <ul class="cheflist">
+    <li class="chef cf" id="test" ng-repeat="item in chefs | filter: query | orderBy: chefOrder:direction">
+      <a href="#/details/{{chefs.indexOf(item)}}">
+        <img ng-src="images/{{item.shortname}}_chef.jpg" alt="Photo of {{item.name}}">
+        <div class="info">
+          <h2>{{item.name}}</h2>
+          <h3>{{item.restaurant}}</h3>
+        </div>
+      </a>
+    </li>
+  </ul>  
+</section>
